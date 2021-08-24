@@ -14,7 +14,7 @@ var db = firebase.firestore()
 
 
 //initial alert
-alert('press one knob to resume audio context')
+alert('press one knob to resume audio context');
 
 //Inizializing all the synths from Tone.js
 
