@@ -13,6 +13,9 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore()
 
 
+//initial alert
+alert('press one knob to resume audio context')
+
 //Inizializing all the synths from Tone.js
 
 const synth = new Tone.Synth();
