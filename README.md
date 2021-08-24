@@ -75,7 +75,7 @@ When the harmonizer is on and a note below A4 is played, the ```updateAddHarmVec
 During the implementation the problem of the amniguity between chords of different scales arised, in other words playing the chords we got as result a different scale (usually with different root note) from the one we expected, this mismatch is due to the nature of the chords that can be seen as a discretization of a scale. Therefore, in order to overcome this problem, for some scales we set a the template chord of 5 notes, instead of the traditional 4 notes chord.
 Hence, always considering C as the root note of the scale, the template chords used for each scale are: \
 \
-![](/../images/template_chords.png)
+![](/images/template_chords.png)
 
 #### Harmonization
 The harmonization is divided in ```Simple```, where we used one harmonizing note,  and ```Complex```, in which we used two armonizing notes. For each possible scale we choose different intervals to harmonize the note played; the choice of the intervals is based on our musical taste, as requested in the CMRM assignment. Therefore, the harmonization intervals are:
