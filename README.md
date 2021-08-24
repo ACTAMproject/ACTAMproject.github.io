@@ -16,13 +16,13 @@ The white and black keys simulate the upper part of a Western Music scaled keybo
 With the Web MIDI API it is possible to connect and use a MIDI device with the project. The _WebMidi_ object makes it easy to send outgoing MIDI messages and to react to incoming MIDI messages. It is possible to play tones that are out of the range of the keyboard of the VST. Another feature implemented is detecting and harmonizing cords that are played on the lower part of the keyboard, from B3 and below. The type of scale will be shown on the display and harmonized with one or two tones. See the **Harmonizer** section below for further information.
 
 ## Pads
-The audio of the pad samples in .wav form and are included in the folder: "VST/Samples/rien samples". The samples contain different kicks, hi-hats, snares created by us on an external DAW. All the samples have a BPM of 120 and the tempo can be changed using the left and right button below the display. The selection of the pads can be saved and loaded, read more in section **Cloud** below.
+The audio of the pad samples in .wav form and are included in the folder: ```VST/Samples/rien samples```. The samples contain different kicks, hi-hats, snares created by us on an external DAW. All the samples have a BPM of 120 and the tempo can be changed using the left and right button below the display. The selection of the pads can be saved and loaded, read more in section **Cloud** below.
 
 ### Cloud
-A set of selected pads can be saved. We used cloud firestore in order to save in the cloud the preset, this makes possible to save the present from one terminal and load to from another terminal. The preset can be saved pushing the 'save' button and can be loaded using the 'load' button that are under the pads.
+A set of selected pads can be saved. We used ```cloud firestore``` in order to save in the cloud the preset, this makes possible to save the present from one terminal and load to from another terminal. The preset can be saved pushing the 'save' button and can be loaded using the 'load' button that are under the pads.
 
 ## Knobs
-The knobs are designed with the _input-knobs.js_ library; simple knobs, sliders, toggle switch can be made with this library. The parameters used are type, range, step and size. The knobs are connected with four different features such as Clean/Delay/Distortion, an arpeggiator and two oscillators. The effects are connected to the key sounds of the keyboard. The function of each knob is explained in the following sections.
+The knobs are designed with the ```_input-knobs.js_``` library; simple knobs, sliders, toggle switch can be made with this library. The parameters used are ```type```, ```range```, ```step``` and ```size```. The knobs are connected with four different features such as ```Clean```/```Delay```/```Distortion```, an ```arpeggiator``` and two ```oscillators```. The effects are connected to the key sounds of the keyboard. The function of each knob is explained in the following sections.
 
 ### Effects: CL/D/DS
 The two knobs under ```"CL/D/DS"``` are to used for selecting the different effect presets wanted while playing the synths.
