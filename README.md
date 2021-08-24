@@ -4,7 +4,10 @@ You can run our VST at this [link](https://actamproject.github.io/).
 Our purpose is to create a vst (using ```html```, ```css``` and ```javascript```) that allows to choose different synth sounds through effects knobs and play with them using the keyboard on the screen or using a MIDI keyboard. Moreover there are 16 pads with pre-loaded sounds, the preset of selected pads can be saved in cloud. Then the sound can be harmonized in different ways according to the scale the user is playing with.   
 
 ## Display
-The display has multiple functions: (1) showing the BPM of the sound samples of the pads, (2) showing the scale that the user is playing, (3) showing the type of wave that the oscillator are creating.
+The display has multiple functions: 
+1. showing the BPM of the sound samples of the pads
+2. showing the scale that the user is playing 
+3. showing the type of wave that the oscillator are creating
 (1) The initial samples of the pads are set in 120 BPM, by using the left and right button the BPM of the sounds can be decreased or increased. The BPM is only shown when the harmonizer is inactive (*Harmonizer I/O* button is blue).
 (2) The played scale is shown when the harmonizer is active (*Harmonizer I/O* button is black). The available scales are: _ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian_. By playing a chord on the lower half of a MIDI keyboard, plugged in MIDI device required, the scale type will be displayed. Further information about the harmonizer be found in the **Harmonizer** section below.
 (3) Clicking on the upper knob of both oscillators it is possible to change it into 3 positions (left, up, right), that mean a sine, saw, or square wave is created.
