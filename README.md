@@ -1,3 +1,5 @@
+You can run our VST at this [link](https://actamproject.github.io/).
+
 # VST
 Our purpose is to create a vst (using html, css and javascript) that allows to choose different synth sounds through effects knobs and play with them using the keyboard on the screen or using a MIDI keyboard. Moreover there are 16 pads with pre-loaded sounds, the preset of selected pads can be saved in cloud. Then the sound can be harmonized in different ways according to the scale the user is playing with.   
 
