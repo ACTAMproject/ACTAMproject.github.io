@@ -36,13 +36,13 @@ Everytime that one of these two knobs is clicked, the block where the sounds of 
 
 ### Arpeggiator
 The arpeggiator has been done with the help of some Tone.js libraries; actually there is no real "arpeggiator" explained in the documentation, so the arpeggio was created using 4 scales (C4,D4,F4,G4), and looping them with the using of the knobs. 
-To make the arpeggio we used the T```one.Pattern``` function, which helped us to make the loop without setting intervals, in a previous version using intervals we noticed that the arpeggio was lagging and so confusing, so this version is better. 
+To make the arpeggio we used the ```Tone.Pattern``` function, which helped us to make the loop without setting intervals, in a previous version using intervals we noticed that the arpeggio was lagging and so confusing, so this version is better. 
 The arpeggio is also obtained by using ```synth.triggerAttackRelease``` function, to which we pass a note parameter and a duration between successive loops, 0.25, corresponding to a quarter note. 
-```Tone.Pattern``` function takes two parameters, one is a function and the other is an array, that is one of the scales through which we are making the arpeggio.
+_Tone.Pattern_ function takes two parameters, one is a function and the other is an array, that is one of the scales through which we are making the arpeggio.
 The knobs through which the arpeggiator operates have three steps, one "clean", where the arpeggio is paused, one at half range and one at full range, covering two arpeggio scales; 
 the first arpeggiator knob is controlled by the ```changeArpeggiator``` function, that takes as a parameter a generic event e, and is called through the "onclick" put on the html code of the knob. 
 The second arpeggiator knob is controlled by the ```changeFrequency``` function, and it works in the same way as the previous function. 
-In both cases, we used the ```playbackRate``` function of Tone.Pattern to make the speed twice faster.
+In both cases, we used the ```playbackRate``` function of _Tone.Pattern_ to make the speed twice faster.
 Arpeggiator is started with the ```pattern.start``` function and ```Tone.Transport.start``` function.  
 The scale used can be seen on the display. 
 
