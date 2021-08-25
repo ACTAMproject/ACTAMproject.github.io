@@ -1,13 +1,11 @@
 <head>
     <title> keyboard </title>
     <link rel="stylesheet" href="css.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/webmidi"></script>
-    <!-- <script src="jquery-3.5.1.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-    <script src="input-knobs.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Icons library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script> <!-- Tone.js library-->
+    <script src="https://cdn.jsdelivr.net/npm/webmidi"></script> <!-- Web MIDI API-->
+    <script src="input-knobs.js"></script> <!-- knobs library-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jquery library-->
     <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>  <!--NumJs library-->
   </head>
   
@@ -73,7 +71,6 @@
             <p>
             <div id="save" class="store_buttons">SAVE</div>
             <div id="load" class="store_buttons">LOAD</div>
-  
             </p>
           </div>
           <div class="knobs">
@@ -117,9 +114,6 @@
               <input name="oscillator_2_2" type="range" class="input-knob" onchange="changeEventHandlerOsc22(this, event)" id="oscillator_2_2" min="0" max="100" value="0"/>
             </div>
             </p>
-            <p>
-            
-            </p>
           </div>
         </div>
         
@@ -130,14 +124,13 @@
           <div id="toggle_simple_complex">-SIMPLE/COMPLEX-</div>
           <div class="help-tip">
             <p>Harmonizer: when a MIDI controller is connected the harmonizer can be used.
-              Play a chord from one of the modes and a note will be added to harmonize.
+              Play a chord (below C4 range) from one of the modes and a note will be added to harmonize.
               Simple: one note is added.
               Complex: two notes are added.
             </p>  
           </div>
         </div>
         
-  
         <div class="LowerPart">
           <div class="displayblock">
             <div class="display" id="bpm-display"></div>
@@ -179,8 +172,7 @@
       </div>
     </div>
   
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script> <!-- Firestore database-->
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
-  
     <script src="javascript.js"></script>
   </body>   
