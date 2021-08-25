@@ -1,10 +1,10 @@
-You can run our VST at this [link](https://actamproject.github.io/). (Open with the Google Chrome-webbrowser since the project is tested in Chrome, in other webbrowsers errors might occur). Due to the library Tone.js (after the chrome update), in order to start the audio context it is necessary to click on a knob.
-
 # VST
 Our purpose is to create a vst (using ```html```, ```css``` and ```javascript```) that allows to choose different synth sounds through effects knobs and play with them using the keyboard on the screen or using a MIDI keyboard. Moreover there are 16 pads with pre-loaded sounds, the preset of selected pads can be saved in cloud (we used [Cloud Firestore](https://firebase.google.com/products/firestore?gclid=CjwKCAjw1JeJBhB9EiwAV612y6I4eJLIuMd3jONgFK6B5ltIM7CL4E5UIwljjJHL0GYHEA8UY4T1gxoCjq4QAvD_BwE&gclsrc=aw.ds). Then the sound can be harmonized in different ways according to the scale the user is playing with. We used [Tone.js](https://tonejs.github.io/) for the synths and their effects.  
 <p align="center">
   <img src="images/vst.png"  width="800"/>
 </p>
+
+You can run our VST at this [link](https://actamproject.github.io/). (Open with the Google Chrome-webbrowser since the project is tested in Chrome, in other webbrowsers errors might occur). Due to the library Tone.js (after the chrome update), in order to start the audio context it is necessary to click on a knob.
 
 ## Display
 The display has multiple functions: 
