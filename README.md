@@ -7,7 +7,7 @@ Our purpose is to create a vst (using ```html```, ```css``` and ```javascript```
 The display has multiple functions: 
 1. showing the BPM of the sound samples of the pads
 2. showing the scale that the user is playing 
-3. showing the type of wave that the oscillator are creating \
+3. showing the type of wave that the oscillator are creating 
 
 (1) The initial samples of the pads are set in 120 BPM, by using the left and right button the BPM of the sounds can be decreased (BPM - 1) or increased (BPM + 1). The BPM is only shown when the harmonizer is inactive (*Harmonizer I/O* button is blue). The functions to show and not show the BPM on the display are ```setBpm``` and ```setNoBpm``` \
 (2) The played scale is shown when the harmonizer is active (*Harmonizer I/O* button is black). The available scales are: _ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian_. By playing a chord on the lower half of a MIDI keyboard, plugged in MIDI device required, the scale type will be displayed. Further information about the harmonizer and the scales can be found in the **Harmonizer** section below. \
