@@ -39,7 +39,7 @@ With the Web MIDI API it is possible to connect and use a MIDI device with the p
 
 ## Pads
 <p align="center">
-  <img src="images/pads.png" />
+  <img src="images/pads.png" width="700"/>
 </p>
 
 The audio of the pad samples in .wav form and are included in the folder: ```VST/Samples/rien samples```. The samples contain different kicks, hi-hats, snares created by us on an external DAW. All the samples have a BPM of 120 and the tempo can be changed using the left and right button below the display. ```render``` function let the samples play and pause.  The selection of the pads can be saved and loaded, read more in section **Cloud** below.
@@ -48,6 +48,10 @@ The audio of the pad samples in .wav form and are included in the folder: ```VST
 A set of selected pads can be saved. We used ```cloud firestore``` in order to save in the cloud the preset , this makes possible to save the present from one terminal and load to from another terminal (```load_model``` function). The preset can be saved pushing the 'save' button and can be loaded using the 'load' button that are under the pads.
 
 ## Knobs
+<p align="center">
+  <img src="images/knobs.png" width="400"/>
+</p>
+
 The knobs are designed with the ```_input-knobs.js_``` library; simple knobs, sliders, toggle switch can be made with this library. The parameters used are ```type```, ```range```, ```step``` and ```size```. The knobs are connected with four different features such as ```Clean```/```Delay```/```Distortion```, an ```arpeggiator``` and two ```oscillators```. The effects are connected to the key sounds of the keyboard. The function of each knob is explained in the following sections.
 
 ### Effects: Clean/Delay/Distortion (CL/D/DS)
@@ -84,6 +88,10 @@ In the second function, we previously take the value of the rotating knob, that 
 The type of wave selected can be seen on the display. 
 
 ## Harmonizer
+<p align="center">
+  <img src="images/harmonizer.png" width="400" />
+</p>
+
 The harmonizer recognizes the scale type (ionian,locryan,phrygian ...) from the chord played with the left hand on the MIDI keyboard and then harmonizes with different intervals (third up/down, fifth up/down, sixth ...) in accordance with the scale type selected. This feature can be activated switching the ```Harmonizer I/O``` button in the black position, also the complexity of the harmonizer can be choose from the user using the ```simple/complex``` button, when the button is in simple (blue position) the harmonizer add one tone to the one we are playing, while in complex mode (black position), two tones are added to the one the user is playng. The harmonizer can be used properly through a MIDI keyboard because the first 60 notes (from A0 to B3) are muted when the harmonizer is on, in this range of keys the user has to play the chord that defines the scale (the keys must be pressed at the same time), from the chord played in the proper half of the keyboard the function ```scaleTypeRecognition``` can recognise the scale type and the starting note of the scale.
 
 #### Scale Recognition
