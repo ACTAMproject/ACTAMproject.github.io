@@ -270,7 +270,7 @@ toggleBtn.onclick = function() {
         bpm_display.textContent = scaleType.substring(0,3);
     }
     else {
-        bpm_display.textContent = bpm;
+        setBpm();
     };
     bpmFn= bpmFn === setBpm ? setNoBpm : setBpm;
 };
@@ -279,9 +279,6 @@ var toggleBtn_complex = document.getElementById('toggle-btn_sc');
 toggleBtn_complex.onclick = function() {
     this.classList.toggle('toggle-btn_sc--dark');
     document.body.classList.toggle('dark-mode');
-    if (this.classList != 'toggle-btn_sc--dark') {
-        setBpm();
-    };
 };
 
 
