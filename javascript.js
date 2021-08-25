@@ -240,6 +240,8 @@ function synth_clicked(synth,index) {
 
 const bpm_display=document.getElementById("bpm-display");
 
+bpm_display.textContent = bpm;
+
 function setBpm() {
     bpm_display.textContent= bpm;
     render();
@@ -269,7 +271,7 @@ toggleBtn.onclick = function() {
         bpm_display.textContent = scaleType.substring(0,3);
     }
     else {
-        bpm_display.textContent = ''
+        bpm_display.textContent = bpm;
     };
     bpmFn= bpmFn === setBpm ? setNoBpm : setBpm;
 };
