@@ -65,7 +65,7 @@ synth.volume.value = -7;
 harmSynth1.connect(merge, 0, 0);
 harmSynth1.volume.value = -12;
 harmSynth2.connect(merge, 0, 0);
-harmSynth2.volume.value = -25;
+harmSynth2.volume.value = -20;
 
 PolySynth.connect(merge, 0, 1);
 PolySynth.volume.value = -7;
@@ -79,7 +79,7 @@ FMsynth.volume.value = -7;
 harmFMsynth1.connect(merge, 0, 1);
 harmFMsynth1.volume.value = -12;
 harmFMsynth2.connect(merge, 0, 1);
-harmFMsynth2.volume.value = -25;
+harmFMsynth2.volume.value = -20;
 
 merge.connect(Mono)
 /*merge.chain(Mono, chorus, Reverb, pingPong), Not used in this implementation*/
