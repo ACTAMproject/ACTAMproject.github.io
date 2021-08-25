@@ -96,13 +96,13 @@ FMSynth.connect(Reverb_2)*/
 
 const whitekeys = Array.from(document.getElementsByClassName("WK"));
 const blackkeys = Array.from(document.getElementsByClassName("BK"));
-const arr_right= document.getElementById("button_right");
-const arr_left= document.getElementById("button_left");
+const arr_right = document.getElementById("button_right");
+const arr_left = document.getElementById("button_left");
 
 model = Array(16).fill(false)
-pads= document.querySelectorAll(".pad");
-const dial=Array.from(document.getElementsByClassName("knob"));
-let bpm=120;
+pads = document.querySelectorAll(".pad");
+const dial = Array.from(document.getElementsByClassName("knob"));
+let bpm = 120;
 
 
 function playing(event) {
@@ -259,6 +259,9 @@ arr_left.addEventListener('click', ()=> {
     bpmFn();
  });
 
+
+ /* Toggle switch */
+ 
 var toggleBtn = document.getElementById('toggle-btn');
 toggleBtn.onclick = function() {
     this.classList.toggle('toggle-btn--dark');
