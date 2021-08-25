@@ -10,22 +10,38 @@ Our purpose is to create a vst (using ```html```, ```css``` and ```javascript```
 The display has multiple functions: 
 1. showing the BPM of the sound samples of the pads 
 <p align="center">
-  <img src="images/displaybpm.png" width="150" />
+  <img src="images/displaybpm1.png" width="150" />
 </p>
-2. showing the scale that the user is playing 
-3. showing the type of wave that the oscillator are creating 
 
-(1) The initial samples of the pads are set in 120 BPM, by using the left and right button the BPM of the sounds can be decreased (BPM - 1) or increased (BPM + 1). The BPM is only shown when the harmonizer is inactive (*Harmonizer I/O* button is blue). The functions to show and not show the BPM on the display are ```setBpm``` and ```setNoBpm``` \
+  2. showing the scale that the user is playing 
+  <p align="center">
+  <img src="images/displayharm.png" width="150" />
+</p>
+
+  3. showing the type of wave that the oscillator are creating 
+  <p align="center">
+  <img src="images/displayosc.png" width="150" />
+</p>
+
+(1) The initial samples of the pads are set in 120 BPM, by using the left and right button the BPM of the sounds can be decreased (BPM - 1) or increased (BPM + 1). The BPM is only shown when the harmonizer is inactive (*Harmonizer I/O* button is blue). The functions to show and not show the BPM on the display are ```setBpm``` and ```setNoBpm```. \
 (2) The played scale is shown when the harmonizer is active (*Harmonizer I/O* button is black). The available scales are: _ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian_. By playing a chord on the lower half of a MIDI keyboard, plugged in MIDI device required, the scale type will be displayed. Further information about the harmonizer and the scales can be found in the **Harmonizer** section below. \
 (3) Clicking on the upper knob of both oscillators it is possible to change it into 3 positions (left, up, right), that mean a sine, saw, or square wave is created.
 
 ## Keyboard
-The white and black keys simulate the upper part of a Western Music scaled keyboard. The sounds of the keys are generated with the Tone.js library, which is a library that contains different sounds and effects. The lower key is then related to a C4 frequency and the last key to a B4. The keys can be played with the mouse by clicking on the keys or by playing the keys of a device that supports MIDI. Three type of key sounds can be selected, the three options are ```Mono Synth```, ```Poly Synth``` and ```FM Synth``` (=```Tone.Synth```, ```Tone.PolySynth(Tone.AMSynth)``` and ```FMSynth```). The keys can be selected by pressing the buttons located below the keyboard. 
+<p align="center">
+  <img src="images/keyboard.png"  />
+</p>
+
+The white and black keys simulate the upper part of a Western Music scaled keyboard. The sounds of the keys are generated with the Tone.js library, which is a library that contains different sounds and effects. The lower key is then related to a C4 frequency and the last key to a B4. The keys can be played with the mouse by clicking on the keys or by playing the keys of a device that supports MIDI. Three type of key sounds can be selected, the three options are ```Mono Synth```, ```Poly Synth``` and ```FM Synth``` (```Tone.Synth```, ```Tone.PolySynth(Tone.AMSynth)``` and ```FMSynth```). The keys can be selected by pressing the buttons located below the keyboard. 
 
 ## MIDI
 With the Web MIDI API it is possible to connect and use a MIDI device with the project. The ```WebMidi``` object makes it easy to send outgoing MIDI messages and to react to incoming MIDI messages. ```WebMidi.enable``` enables a MIDI device to connect, the console shows if WebMidi is enabled or disabled. It is possible to play tones that are out of the range of the keyboard of the VST. Another feature implemented is detecting and harmonizing chords that are played on the lower part of the keyboard, from B3 and below. The type of scale will be shown on the display and harmonized with one or two tones. See the [Harmonizer](#harmonizer) section below for further information. ```playNoteMIDI``` and ```stopnoteMIDI``` are functions to play and stop the keys sounds.
 
 ## Pads
+<p align="center">
+  <img src="images/pads.png" />
+</p>
+
 The audio of the pad samples in .wav form and are included in the folder: ```VST/Samples/rien samples```. The samples contain different kicks, hi-hats, snares created by us on an external DAW. All the samples have a BPM of 120 and the tempo can be changed using the left and right button below the display. ```render``` function let the samples play and pause.  The selection of the pads can be saved and loaded, read more in section **Cloud** below.
 
 ### Cloud
