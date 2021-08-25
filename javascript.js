@@ -240,8 +240,6 @@ function synth_clicked(synth,index) {
 
 const bpm_display=document.getElementById("bpm-display");
 
-bpm_display.textContent = bpm;
-
 function setBpm() {
     bpm_display.textContent= bpm;
     render();
@@ -259,6 +257,7 @@ arr_left.addEventListener('click', ()=> {
     bpmFn();
  });
 
+setBpm();
 
  /* Toggle switch */
  
@@ -281,7 +280,7 @@ toggleBtn_complex.onclick = function() {
     this.classList.toggle('toggle-btn_sc--dark');
     document.body.classList.toggle('dark-mode');
     if (this.classList != 'toggle-btn_sc--dark') {
-        bpm_display.textContent = ''
+        setBpm();
     };
 };
 
