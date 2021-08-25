@@ -30,11 +30,17 @@ const FMsynth = new Tone.FMSynth();
 const harmFMsynth1 = new Tone.FMSynth();
 const harmFMsynth2 = new Tone.FMSynth();
 
-/*const chorus = new Tone.Chorus(4, 2.5, 0.5);*/
 var audioContext= new AudioContext();
 var oscillator_2;
 var min=document.getElementById("oscillator_1").min;
 var max=document.getElementById("oscillator_1").max;
+
+
+
+/*Effect blocks used in previous version that are no longer used
+
+
+/*const chorus = new Tone.Chorus(4, 2.5, 0.5);*/
 
 /*const dist = new Tone.Distortion(0.4);
 
@@ -46,8 +52,9 @@ const tremolo = new Tone.Tremolo(9, 0.75);*/
 
 /*const pingPong = new Tone.PingPongDelay("8n", 0.3); /*.connect(filter);*/
 
-const Mono = new Tone.Mono (); /*.connect(Reverb);*/
-const merge = new Tone.Merge(); /*.connect(Mono);*/
+
+const Mono = new Tone.Mono (); /*stereo audio to mono*/
+const merge = new Tone.Merge(); 
 
 const filter = new Tone.Filter(920, "lowpass").toDestination();
 /*var split = new Tone.Split();
@@ -75,23 +82,14 @@ harmFMsynth2.connect(merge, 0, 1);
 harmFMsynth2.volume.value = -12;
 
 merge.connect(Mono)
-/*merge.chain(Mono, chorus, Reverb, pingPong)*/
+/*merge.chain(Mono, chorus, Reverb, pingPong), Not used in this implementation*/
 
 synth.triggerAttackRelease("C4", "32n");
 PolySynth.triggerAttackRelease("C4", "32n");
 FMsynth.triggerAttackRelease("C4", "32n");
 
 
-/*$(function() {
-    $(".dial").knob();
-});*/
 
-/*console.log(merge.numberOfInputs)
-console.log(Reverb.numberOfInputs)
-const Reverb_1 = new Tone.Reverb(wet=1).toDestination();
-PolySynth.connect(Reverb_1)
-const Reverb_2 = new Tone.Reverb(wet=1).toDestination();
-FMSynth.connect(Reverb_2)*/
 
 
 const whitekeys = Array.from(document.getElementsByClassName("WK"));
@@ -655,13 +653,13 @@ function changeValueFx(e){
     if(Number(e.value)===100){
         e.value=0;
 
-        /*const pingPong = new Tone.PingPongDelay("8n", 0.3).toDestination(); /*.connect(filter);*/
+        /*const pingPong = new Tone.PingPongDelay("8n", 0.3).toDestination(); /*.connect(filter); USED IN PREVIOUS IMPLEMENTATIONS*/
 
         Mono.disconnect()
         Mono.toDestination();
 
 
-        /*instr[instr_index].triggerAttackRelease("E4", "32n");*/
+        /*instr[instr_index].triggerAttackRelease("E4", "32n"); OR*/
         synth.triggerAttackRelease(0.05);
         PolySynth.triggerAttackRelease(0.05);
         FMsynth.triggerAttackRelease(0.05);
@@ -673,12 +671,12 @@ function changeValueFx(e){
         e.value=100;
         const dist = new Tone.Distortion(0.9).toDestination();
         
-        /*const freeverb1 = new Tone.Freeverb().toDestination();
+        /*const freeverb1 = new Tone.Freeverb().toDestination(); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN
         freeverb1.dampening = 1000*/
 
-        /*const reverb1 = new Tone.JCReverb(0.4).toDestination();
+        /*const reverb1 = new Tone.JCReverb(0.4).toDestination(); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN
 
-        /*const delay = new Tone.FeedbackDelay(0.5);*/
+        /*const delay = new Tone.FeedbackDelay(0.5); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
 
         Mono.disconnect();
         Mono.connect(dist);
@@ -686,7 +684,7 @@ function changeValueFx(e){
         synth.triggerAttackRelease(0.05);
         PolySynth.triggerAttackRelease(0.05);
         FMsynth.triggerAttackRelease(0.05);
-        /*instr[instr_index].triggerAttackRelease("A4", "8n");*/
+        /*OR instr[instr_index].triggerAttackRelease("A4", "8n");*/
         
 
     }
@@ -695,7 +693,7 @@ function changeValueFx(e){
 
         const pingPong = new Tone.PingPongDelay("8n", 0.3).toDestination(); /*.connect(filter);*/
 
-        /*const freeverb = new Tone.Freeverb().toDestination();*/
+        /*const freeverb = new Tone.Freeverb().toDestination(); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
         /*freeverb.dampening = 1000;*/
         
         Mono.disconnect();
@@ -719,21 +717,19 @@ function changeValueFx2(e){
             frequency: 15,
             octaves: 5,
             baseFrequency: 1000
-        }).toDestination();*/
+        }).toDestination();      USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
     
-        /*const pingPong = new Tone.PingPongDelay("8n", 0.3).toDestination(); /*.connect(filter);*/
+        /*const pingPong = new Tone.PingPongDelay("8n", 0.3).toDestination(); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
 
         const filter = new Tone.Filter(920, "lowpass").toDestination();
-        /*filter.frequency.rampTo(10000, 100);*/
-
+        
         Mono.disconnect();
         Mono.connect(filter);
         
         synth.triggerAttackRelease(0.05);
         PolySynth.triggerAttackRelease(0.05);
         FMsynth.triggerAttackRelease(0.05);
-
-        /*
+        /*OR
         synth.triggerAttackRelease("E3", "2n");
         PolySynth.triggerAttackRelease("E3", "2n");
         FMsynth.triggerAttackRelease("E3", "2n");
@@ -745,7 +741,7 @@ function changeValueFx2(e){
         e.value=100;
     
         const dist = new Tone.Distortion(0.9).connect(filter);
-        /*const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start();*/
+        /*const chorus = new Tone.Chorus(4, 2.5, 0.5).toDestination().start();   USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
 
         Mono.disconnect();
         Mono.connect(dist);
@@ -753,21 +749,17 @@ function changeValueFx2(e){
         synth.triggerAttackRelease(0.05);
         PolySynth.triggerAttackRelease(0.05);
         FMsynth.triggerAttackRelease(0.05);
-        /*
-        synth.triggerAttackRelease(["C3", "E3", "G3"], "8n");
-        PolySynth.triggerAttackRelease(["C3", "E3", "G3"], "8n");
-        FMsynth.triggerAttackRelease(["C3", "E3", "G3"], "8n");
-        */
+     
     }
     else{
         e.value=50;
 
         const pingPong = new Tone.PingPongDelay("8n", 0.3).connect(filter); /*.connect(filter);*/
         
-        /*const freeverb = new Tone.Freeverb().toDestination();*/
+        /*const freeverb = new Tone.Freeverb().toDestination(); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
         /*freeverb.dampening = 1000;*/
 
-        /*const dist = new Tone.Distortion(0.8).toDestination();*/
+        /*const dist = new Tone.Distortion(0.8).toDestination(); USED IN PREVIOUS IMPLEMENTATIONS - CAN BE ADDED TO THE CHAIN*/
         
         Mono.disconnect();
         Mono.connect(pingPong);
@@ -775,13 +767,10 @@ function changeValueFx2(e){
         synth.triggerAttackRelease(0.05);
         PolySynth.triggerAttackRelease(0.05);
         FMsynth.triggerAttackRelease(0.05);
-               
-        /*synth.triggerAttackRelease("A1", "8n");
-        PolySynth.triggerAttackRelease("A1", "8n");
-        FMsynth.triggerAttackRelease("A1", "8n");*/
+        
     }
 };
-/* end EFFECTS */
+/* end - EFFECTS */
 
 
 
