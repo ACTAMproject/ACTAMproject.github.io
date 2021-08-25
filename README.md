@@ -94,5 +94,5 @@ The harmonization is divided in ```Simple```, where we used one harmonizing note
 | Locrian | 4th | 6th |
 
 The harmonization takes into account the distance between the harmonizing notes that can lead to dissonances, indeed the secondo harmonizing tune is raised by one octave. \
-In the implementation, except for the _PolySynth_ that allows to play multiple notes at the same time, new synths are created, of the same type with the same effects of the one which is selected, that sound the harmonizing note once is calculated by the ```harmonicNotes``` funtion. In the same way, when a key is released, the respective synths are released, instead for _PolySynth_, the harmonic notes are calculated once more in order to release that specific note.
+In the implementation, except for the _PolySynth_ that allows to play multiple notes at the same time, new synths are created, of the same type with the same effects of the one which is selected, that sound the harmonizing note once is calculated by the ```harmonicNotes``` funtion. In the same way, when a key is released, the respective synths are released, instead, for _PolySynth_ the harmonic notes are calculated once more in order to release that specific note.
 
