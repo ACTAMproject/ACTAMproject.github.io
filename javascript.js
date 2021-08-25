@@ -65,7 +65,7 @@ synth.volume.value = -7;
 harmSynth1.connect(merge, 0, 0);
 harmSynth1.volume.value = -12;
 harmSynth2.connect(merge, 0, 0);
-harmSynth2.volume.value = -12;
+harmSynth2.volume.value = -20;
 
 PolySynth.connect(merge, 0, 1);
 PolySynth.volume.value = -7;
