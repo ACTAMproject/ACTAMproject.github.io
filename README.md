@@ -4,6 +4,7 @@ Our purpose is to create a vst (using ```html```, ```css``` and ```javascript```
   <img src="images/vst.png"  width="800"/>
 </p>
 
+## How to try it
 You can run our VST at this [link](https://actamproject.github.io/). (Open with the Google Chrome-webbrowser since the project is tested in Chrome, in other webbrowsers errors might occur). Due to the library Tone.js (after the chrome update), in order to start the audio context it is necessary to click on a knob.
 
 ## Display
