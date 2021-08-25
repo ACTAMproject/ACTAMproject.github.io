@@ -336,9 +336,6 @@ WebMidi.enable(function (err) {
 const harmVec = new Array();
 var boolChord = new Array();
 var scaleType = 'ionian';
-/*harmVec[harmVec.length] = 'prova';
-harmVec.splice(1,1);
-console.log(harmVec)*/
 
 function updateAddHarmVec(e) {
     harmVec[harmVec.length] = e.note.name;
@@ -390,6 +387,7 @@ function stopnoteMIDI(e){
 const harmInter1 = [5,6,6,4,6,6,4];
 const harmInter2 = [7,4,3,6,7,3,6];
 
+//function used when harmonizer is ON
 function playHarmMIDI(e){
 
     var playFund = e.note.name + e.note.octave;
@@ -409,8 +407,6 @@ function playHarmMIDI(e){
         instr[instr_index].triggerAttack(playFund,Tone.now());
         harmInstr1[instr_index].triggerAttack(playHarm1,Tone.now());
     }
-    // PolySynth.triggerAttack(playFund,Tone.now());
-    // PolySynth.triggerAttack(playHarm1,Tone.now());
 
     document.getElementById(playFund).classList.add("playing");
 };
@@ -838,6 +834,8 @@ function templateMatrixCreation() {
     insertScale(locrianScale.reshape(1,12),0,true);
 } 
 
+//function that insert the scale template given at the input in the template matrix 
+// and prepare the next vector to insert
 function insertScale(template,flag,completeMatrix) {
     var idx;
     /*console.log(template);*/
@@ -873,9 +871,7 @@ function shiftTemplate(oldTemplate) {
     console.log(newLastValue)*/
 
     for(k=0; k < nNotes-1; k++ ) {
-        /*console.log('for cicle values')
-        console.log(oldTemplate.get(0,k+1))
-        console.log(k)*/
+        
         shiftedTemplate.set(0,k+1,oldTemplate.get(0,k));
         /*console.log(shiftedTemplate.get(0,k));*/
     }
@@ -892,7 +888,7 @@ function shiftTemplate(oldTemplate) {
 templateMatrixCreation();
 
 
-/*i visualize the columns of the template matrix*/
+/*I visualize the columns of the template matrix*/
 
 var templateMatrixT = templateMatrix.T;  /*transpose the template matrix*/
 var matrix = templateMatrixT.tolist()
@@ -905,7 +901,7 @@ var scaleMatrix = completeScaleMatrixT.tolist();
 
 function chordLab(){
     console.log(harmVec);
-    notesToArray(harmVec);   /*func notesToArray at line 885*/
+    notesToArray(harmVec);   /*func notesToArray at line 912*/
     /*console.log(harmChord.selection.data);*/
 
     scaleType = scaleTypeRecognition(harmChord.selection.data);
@@ -928,7 +924,7 @@ function notesToArray(notes) {
     /*console.log(harmChord.selection.data);*/
 }
 
-/* funciton that given the chord recognizes the scale type and the starting note */
+/* function that given the chord recognizes the scale type and the starting note */
 function scaleTypeRecognition(chord) {
     var scaleTemplate = []
     var similarityValues = new Array(matrix.length);
